@@ -1,0 +1,42 @@
+{
+  "video_path": "data/videos/example_parking_lot.mp4",
+  "frame_size": [1920, 1080],
+  "spots": [
+    {
+      "id": 1,
+      "points": [[100, 200], [200, 200], [200, 300], [100, 300]],
+      "type": "normal",
+      "occupied": false
+    },
+    {
+      "id": 2,
+      "points": [[220, 200], [320, 200], [320, 300], [220, 300]],
+      "type": "normal",
+      "occupied": false
+    },
+    {
+      "id": 3,
+      "points": [[340, 200], [440, 200], [440, 300], [340, 300]],
+      "type": "electric",
+      "occupied": false
+    },
+    {
+      "id": 4,
+      "points": [[460, 200], [560, 200], [560, 300], [460, 300]],
+      "type": "electric",
+      "occupied": false
+    },
+    {
+      "id": 5,
+      "points": [[580, 200], [680, 200], [680, 300], [580, 300]],
+      "type": "reserved",
+      "occupied": false
+    }
+  ],
+  "total_spots": 5,
+  "spot_types": {
+    "normal": 2,
+    "electric": 2,
+    "reserved": 1
+  }
+}

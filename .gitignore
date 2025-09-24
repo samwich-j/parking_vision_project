@@ -60,10 +60,13 @@ Thumbs.db
 
 # Credentials and Secrets
 .env
-*.json
 credentials.json
 token.json
 service_account.json
+
+# Allow example configs but exclude sensitive JSON files
+!data/configs/example_*.json
+!config/*.json
 
 # Data and Output
 /data/videos/
