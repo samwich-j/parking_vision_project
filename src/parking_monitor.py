@@ -444,7 +444,7 @@ class ParkingMonitor:
             video_writer = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
         if display:
-            cv2.namedWindow('Parking Monitor', cv2.WINDOW_RESIZABLE)
+            cv2.namedWindow('Parking Monitor', cv2.WINDOW_NORMAL)
 
         try:
             while True:
