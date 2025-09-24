@@ -227,7 +227,7 @@ class ParkingSpotDefiner:
             return
 
         window_name = "Parking Spot Definer"
-        cv2.namedWindow(window_name, cv2.WINDOW_RESIZABLE)
+        cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
         cv2.setMouseCallback(window_name, self.mouse_callback)
 
         print("\n🚗 Parking Spot Definition Tool")

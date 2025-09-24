@@ -1,0 +1,15 @@
+# Minimal requirements that can be installed manually
+# Essential packages
+opencv-python
+numpy
+matplotlib
+Pillow
+PyYAML
+
+# Optional packages (install if possible)
+# yt-dlp
+# ultralytics
+# gspread
+# pandas
+# scikit-image
+# tqdm

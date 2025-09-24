@@ -348,27 +348,27 @@ class ParkingMonitor:
         # Statistics
         available = self.total_spots - self.occupied_spots
         cv2.putText(display_frame, f"Total Spots: {self.total_spots}",
-                   (panel_x + 10, y_offset), font, font_scale, color, 1)
+                   (int(panel_x + 10), int(y_offset)), font, font_scale, color, 1)
         y_offset += line_height
 
         cv2.putText(display_frame, f"Available: {available}",
-                   (panel_x + 10, y_offset), font, font_scale, self.colors['free'], thickness)
+                   (int(panel_x + 10), int(y_offset)), font, font_scale, self.colors['free'], thickness)
         y_offset += line_height
 
         cv2.putText(display_frame, f"Occupied: {self.occupied_spots}",
-                   (panel_x + 10, y_offset), font, font_scale, self.colors['occupied'], thickness)
+                   (int(panel_x + 10), int(y_offset)), font, font_scale, self.colors['occupied'], thickness)
         y_offset += line_height
 
         # Occupancy percentage
         occupancy_rate = (self.occupied_spots / self.total_spots * 100) if self.total_spots > 0 else 0
         cv2.putText(display_frame, f"Occupancy: {occupancy_rate:.1f}%",
-                   (panel_x + 10, y_offset), font, font_scale, color, 1)
+                   (int(panel_x + 10), int(y_offset)), font, font_scale, color, 1)
         y_offset += line_height
 
         # Timestamp
         timestamp = datetime.now().strftime("%H:%M:%S")
         cv2.putText(display_frame, f"Updated: {timestamp}",
-                   (panel_x + 10, y_offset), font, 0.4, color, 1)
+                   (int(panel_x + 10), int(y_offset)), font, 0.4, color, 1)
 
         return display_frame
 
