@@ -1,0 +1,69 @@
+# Parking Vision Configuration Settings
+
+# Detection Settings
+detection:
+  confidence_threshold: 0.5      # Minimum confidence for vehicle detection (0.0-1.0)
+  nms_threshold: 0.4            # Non-maximum suppression threshold (0.0-1.0)
+  frame_skip: 1                 # Process every N frames (1 = every frame)
+  enable_tracking: true         # Enable object tracking between frames
+
+# Video Processing
+video:
+  resize_width: 1280            # Resize video width for processing (0 = original)
+  resize_height: 720            # Resize video height for processing (0 = original)
+  fps_limit: 30                 # Maximum FPS to process (0 = no limit)
+
+# Orange Cone Detection
+cone_detection:
+  enabled: true                 # Enable orange cone detection
+  hue_range: [10, 25]          # HSV hue range for orange detection
+  saturation_min: 100          # Minimum saturation for orange
+  value_min: 100               # Minimum brightness for orange
+  min_area: 200                # Minimum cone area in pixels
+  max_area: 2000               # Maximum cone area in pixels
+
+# Weather Adaptation
+weather:
+  auto_adjust: true            # Automatically adjust for weather conditions
+  brightness_boost: 1.2        # Brightness multiplier for dark conditions
+  contrast_boost: 1.1          # Contrast multiplier for low contrast
+  enable_denoising: true       # Apply noise reduction filters
+
+# Output Settings
+output:
+  save_detections: true        # Save detection results to JSON
+  save_video: false            # Save annotated video output
+  log_level: "INFO"            # Logging level (DEBUG, INFO, WARNING, ERROR)
+  update_interval: 30          # Seconds between Google Sheets updates
+
+# Google Sheets Integration
+google_sheets:
+  enabled: true                # Enable Google Sheets integration
+  credentials_path: "credentials/service_account.json"
+  spreadsheet_name: "Parking Lot Monitor"
+  auto_create: true            # Automatically create spreadsheet if not exists
+
+# Spot Types Configuration
+spot_types:
+  normal:
+    color: [0, 255, 0]         # BGR color for normal spots (green)
+    priority: 1                # Priority for spot allocation
+  electric:
+    color: [255, 255, 0]       # BGR color for electric spots (cyan)
+    priority: 2                # Higher priority for electric vehicles
+  reserved:
+    color: [128, 128, 128]     # BGR color for reserved spots (gray)
+    priority: 3                # Highest priority
+
+# Performance Settings
+performance:
+  use_gpu: false               # Use GPU acceleration if available
+  max_threads: 4               # Maximum number of processing threads
+  memory_limit_mb: 1024        # Maximum memory usage in MB
+
+# Notification Settings
+notifications:
+  enable_alerts: false         # Enable parking lot full alerts
+  full_threshold: 0.95         # Threshold for "parking lot full" (95%)
+  empty_threshold: 0.1         # Threshold for "parking lot empty" (10%)
+  webhook_url: ""              # Webhook URL for notifications
